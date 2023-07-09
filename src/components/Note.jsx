@@ -14,6 +14,8 @@ function Note(props) {
 
 	return (
 		<div
+			data-aos="zoom-in-right"
+      			data-aos-duration="1000"
 			style={{
 				backgroundColor: theme ? "black" : "white",
 				boxShadow: !theme
