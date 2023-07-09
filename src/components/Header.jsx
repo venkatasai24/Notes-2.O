@@ -33,7 +33,7 @@ function Header() {
   useEffect(() => {
     if (isAuthenticated) {
       toast.dismiss(); // Dismiss any previous notifications
-      toast.success("Login successful", {
+      toast.success(`Welcome ${user.name}`, {
         position: "top-right",
         autoClose: 3000,
         hideProgressBar: false,
@@ -71,7 +71,6 @@ function Header() {
             : "0 0 10px 5px rgba(255, 255, 255, 0.1)",
         }}
       >
-        <h1 style={{ color: theme ? "black" : "white" }}>
           <div
             style={{
               display: "flex",
@@ -92,7 +91,7 @@ function Header() {
                 />
               </div>
             ) : (
-              <div>Notes</div>
+              <h1 style={{ color: theme ? "black" : "white" }}>Notes</h1>
             )}
             <div>
               {isAuthenticated ? (
@@ -129,7 +128,6 @@ function Header() {
               </Fab>
             </div>
           </div>
-        </h1>
       </header>
     </>
   );
