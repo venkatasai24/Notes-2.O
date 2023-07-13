@@ -97,46 +97,23 @@ form.create-note button {
   outline: none;
 }
 
-.pulse-container {
-  width: 120px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.pulse-bubble {
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  background-color: #ff7034;
-}
-
-.pulse-bubble-1 {
-  animation: pulse 0.4s ease 0s infinite alternate;
-}
-.pulse-bubble-2 {
-  animation: pulse 0.4s ease 0.2s infinite alternate;
-}
-.pulse-bubble-3 {
-  animation: pulse 0.4s ease 0.4s infinite alternate;
-}
-
-.spinner-box {
-  width: 120px;
+div.loader {
+  width: 40px;
   height: 40px;
+  border: 5px solid transparent;
+  border-top-color: #ff7034;
+  border-radius: 50%;
+  animation: loading 1s linear infinite;
   margin: 30px auto;
-  display: flex;
-  justify-content: center;
 }
 
-@keyframes pulse {
-  from {
-    opacity: 1;
-    transform: scale(1);
+@keyframes loading {
+  0% {
+    transform: rotate(0deg);
   }
-  to {
-    opacity: 0.25;
-    transform: scale(0.75);
+
+  100% {
+    transform: rotate(360deg);
   }
 }
 
