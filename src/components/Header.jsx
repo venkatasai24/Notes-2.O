@@ -3,6 +3,7 @@ import WbSunnyIcon from "@mui/icons-material/WbSunny";
 import DarkModeIcon from "@mui/icons-material/DarkMode";
 import LoginIcon from "@mui/icons-material/Login";
 import LogoutIcon from "@mui/icons-material/Logout";
+import Tooltip from "@mui/material/Tooltip";
 import Fab from "@mui/material/Fab";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -96,36 +97,42 @@ function Header() {
             <div>
               {isAuthenticated ? (
                 <>
+                  <Tooltip title="Logout" arrow followCursor>
+                    <Fab
+                      size="small"
+                      onMouseEnter={() => setBg1("#FF8F6A")}
+                      onMouseLeave={() => setBg1("#FF7034")}
+                      onClick={handleLogout}
+                      style={fabStyle1}
+                    >
+                      <LogoutIcon />
+                    </Fab>
+                  </Tooltip>
+                </>
+              ) : (
+                <Tooltip title="Login" arrow followCursor>
                   <Fab
                     size="small"
                     onMouseEnter={() => setBg1("#FF8F6A")}
                     onMouseLeave={() => setBg1("#FF7034")}
-                    onClick={handleLogout}
+                    onClick={() => loginWithRedirect()}
                     style={fabStyle1}
                   >
-                    <LogoutIcon />
+                    <LoginIcon />
                   </Fab>
-                </>
-              ) : (
+                </Tooltip>
+              )}
+              <Tooltip title={theme ? "Dark Mode" : "Light Mode" arrow followCursor>
                 <Fab
                   size="small"
-                  onMouseEnter={() => setBg1("#FF8F6A")}
-                  onMouseLeave={() => setBg1("#FF7034")}
-                  onClick={() => loginWithRedirect()}
-                  style={fabStyle1}
+                  onMouseEnter={() => setBg("#FF8F6A")}
+                  onMouseLeave={() => setBg("#FF7034")}
+                  onClick={toggleTheme}
+                  style={fabStyle}
                 >
-                  <LoginIcon />
+                  {theme ? <DarkModeIcon /> : <WbSunnyIcon />}
                 </Fab>
-              )}
-              <Fab
-                size="small"
-                onMouseEnter={() => setBg("#FF8F6A")}
-                onMouseLeave={() => setBg("#FF7034")}
-                onClick={toggleTheme}
-                style={fabStyle}
-              >
-                {theme ? <DarkModeIcon /> : <WbSunnyIcon />}
-              </Fab>
+              </Tooltip>
             </div>
           </div>
       </header>
