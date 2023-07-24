@@ -8,14 +8,9 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 Authentication with Auth0: Secure your notes with user authentication using Auth0.
 
-Create and save notes: Easily create and save your notes with the ability to add titles and descriptions.
-
-Edit and format notes: Edit your notes with formatting options such as bold, italics, bullet points, and more.
-
-Categorize notes: Organize your notes into different categories or folders for easy access.
+Create, Edit, and save notes: Easily create, edit, and save your notes with the ability to add titles and descriptions.
 
 Dark Mode: Switch to Dark Mode for a visually appealing and comfortable experience in low-light environments.
-
 
 ## Available Scripts
 
