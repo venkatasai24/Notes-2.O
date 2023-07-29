@@ -4,6 +4,8 @@ Notes App is a simple and intuitive note-taking application designed to help you
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+![Notes](Notes.gif)
+
 ## Features
 
 Authentication with Auth0: Secure your notes with user authentication using Auth0.
